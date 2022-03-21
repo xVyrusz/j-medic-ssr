@@ -1,5 +1,7 @@
 const express = require('express');
+const exphbs = require('express-handlebars');
 const app = express();
+const path = require('path');
 const cors = require('cors');
 const helmet = require('helmet');
 const router = require('./api/routes/routes');
@@ -14,6 +16,18 @@ const notFoundHandler = require('./utils/middlewares/notFound');
 const { config } = require('./config/index');
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(express.static(path.join('./ssr/public')))
+
+// HandleBars
+app.set('views', path.join(__dirname, './ssr/views'));
+app.engine('.hbs', exphbs.engine({
+    defaultLayout: 'main',
+    layoutsDir: path.join(app.get('views'),'layouts'),
+    partialsDir: path.join(app.get('views'),'partials'),
+    extname: '.hbs',
+    helpers: require('./ssr/lib/handlebars')
+}));
+app.set('view engine', '.hbs');
 
 // Middlewares
 app.use(cors());

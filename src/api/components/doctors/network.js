@@ -10,17 +10,15 @@ const controller = require('./controller');
 const checkJwt = require('../../../utils/middlewares/auth/checkJwt');
 const checkRole = require('../../../utils/middlewares/auth/checkRole');
 
-router.get('/', checkJwt, (req, res, next) => {
+router.get('/add', (req, res, next) => {
     try {
-        res.status(200).json({
-            Message: 'Hello!'
-        });
+        res.render('doctors/add');
     } catch (error) {
         next(error);
     }
 });
 
-router.post('/add', checkJwt, checkRole, validationHandler(createDoctorSchema), async (req, res, next) => {
+router.post('/add', validationHandler(createDoctorSchema), async (req, res, next) => {
     const {
         firstName,
         lastName,
@@ -55,7 +53,15 @@ router.post('/add', checkJwt, checkRole, validationHandler(createDoctorSchema), 
     }
 });
 
-router.put('/update', checkJwt, checkRole, validationHandler(updateDoctorSchema), async (req, res, next) => {
+router.get('/update', (req, res, next) => {
+    try {
+        res.render('doctors/update');
+    } catch (error) {
+        next(error);
+    }
+});
+
+router.post('/update', checkJwt, checkRole, validationHandler(updateDoctorSchema), async (req, res, next) => {
     const {
         id,
         firstName,
@@ -92,27 +98,41 @@ router.put('/update', checkJwt, checkRole, validationHandler(updateDoctorSchema)
     }
 });
 
-
-router.get('/list/:id', checkJwt, validationHandler({ id: doctorIdSchema }, 'params'), async (req, res, next) => {
-        const { id } = req.params;
-
-        try {
-                const doctor = await controller.getDoctorById(id);
-            res.json({
-                Message: 'Found',
-                Doctor: {
-                    "id": doctor.id,
-                    "firstName": doctor.firstName,
-                    "lastName": doctor.lastName,
-                    "username": doctor.username,
-                    "license": doctor.license,
-                    "phone": doctor.phone
-                }
-            });
-        } catch (error) {
-            next(error);
-        }
+router.get('/list', async (req, res, next) => {
+    try {
+        res.render('doctors/list');
+    } catch (error) {
+        next(error);
     }
+}
+);
+
+router.get('/list/id', async (req, res, next) => {
+    try {
+        res.render('doctors/listId');
+    } catch (error) {
+        next(error);
+    }
+}
+);
+
+router.post('/list/id', validationHandler({ id: doctorIdSchema }), async (req, res, next) => {
+    const { id } = req.body;
+    console.log(id);
+
+    try {
+        const doctors = await controller.getDoctorById(id);
+        if (doctors) {
+            const doctor = doctors.dataValues;
+            console.log(doctor);
+            res.render('doctors/listIdGet', { doctor });
+        } else {
+            res.render('doctors/dontExist');
+        }
+    } catch (error) {
+        next(error);
+    }
+}
 );
 
 module.exports = router;
