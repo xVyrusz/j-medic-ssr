@@ -17,9 +17,7 @@ router.get('/', (req, res, next) => {
 
 router.get('/home', (req, res, next) => {
     try {
-        res.status(200).json({
-            Message: 'This is the home page'
-        });
+        res.render('home/home')
     } catch (error) {
         next(error);
     }

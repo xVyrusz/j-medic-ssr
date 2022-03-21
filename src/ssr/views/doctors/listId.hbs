@@ -1,24 +1,24 @@
 <div class="container p-4">
     <div class="row">
         <div class="col-md-10  mx-auto">
-            <div class="col-12">
+            <div class="col-12 text-center">
                 <h1>Buscar Doctor por Id</h1>
             </div>
-            <div class="card">
+            <div class="card text-white card-color mb-3 col-6 mx-auto">
                 <div class="card-body">
                     <form class="row g-3" action="/api/doctor/list/id" method="post">
-                        <div class="col-md-4">
-                            <label class="form-label">Id del Doctor</label>
+                            <h3>Id del Doctor</h3>
+                        <div class="col-12">
                             <input type="number" class="form-control" name="id" autofocus required>
                         </div>
                         <div class="col-12">
-                            <button class="btn btn-primary" type="submit">Aceptar</button>
+                            <button class="btn btn-success" type="submit">Aceptar</button>
                         </div>
                     </form>
                 </div>
             </div>
-            <div class="col-12 p-1">
-                <a class="btn btn-primary" href="/api/doctor/list">Regresar</a>
+            <div class="col-12 p-1 text-center">
+                <a class="btn btn-danger" href="/api/doctor/list">Regresar</a>
             </div>
         </div>
     </div>

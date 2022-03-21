@@ -1,44 +1,47 @@
 <div class="container p-4">
     <div class="row">
         <div class="col-md-10 mx-auto">
-            <div class="col-12">
+            <div class="col-12 text-center">
                 <h1>Actualizar Doctor</h1>
             </div>
-            <div class="card">
+            <div class="card card-color">
                 <div class="card-body">
                     <form class="row g-3" action="/api/doctor/add" method="post">
-                        <div class="col-md-4">
+                        <div class="col-sm-12 col-md-6 col-lg-4">
                             <label class="form-label">Id del Doctor a Actualizar</label>
                             <input type="text" class="form-control" name="firstName" autofocus required>
                         </div>
-                        <div class="col-md-4">
+                        <div class="col-sm-12 col-md-6 col-lg-4">
                             <label class="form-label">Nombre(s)</label>
                             <input type="text" class="form-control" name="firstName">
                         </div>
-                        <div class="col-md-4">
+                        <div class="col-sm-12 col-md-6 col-lg-4">
                             <label class="form-label">Apellidos</label>
                             <input type="text" class="form-control" name="lastName">
                         </div>
-                        <div class="col-md-4">
+                        <div class="col-sm-12 col-md-6 col-lg-4">
                             <label class="form-label">Usuario</label>
                             <div class="input-group">
                                 <span class="input-group-text">@</span>
                                 <input type="text" class="form-control" name="username">
                             </div>
                         </div>
-                        <div class="col-md-4">
+                        <div class="col-sm-12 col-md-6 col-lg-4">
                             <label class="form-label">Cedula</label>
                             <input type="text" class="form-control" name="license">
                         </div>
-                        <div class="col-md-4">
+                        <div class="col-sm-12 col-md-6 col-lg-4">
                             <label class="form-label">Teléfono</label>
                             <input type="text" class="form-control" name="phone">
                         </div>
                         <div class="col-12">
-                            <button class="btn btn-primary" type="submit">Aceptar</button>
+                            <button class="btn btn-success" type="submit">Aceptar</button>
                         </div>
                     </form>
                 </div>
+            </div>
+            <div class="col-12 p-1 text-center">
+                <a class="btn btn-danger" href="/api/doctor">Regresar</a>
             </div>
         </div>
     </div>

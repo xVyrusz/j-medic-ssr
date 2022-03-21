@@ -1,36 +1,39 @@
-<div class="container p-4">
-    <div class="dropdown">
-        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"
-            data-bs-toggle="dropdown" aria-expanded="false">
-            Dropdown button
-        </button>
-        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
-        </ul>
-    </div>
-    <div class="row">
-        <div class="col-md-10 mx-auto">
-            <div class="col-12">
+<main id="main">
+    <div class="container p-4">
+        <div class="row">
+            <div class="col-12 text-center">
                 <h1>Menu</h1>
             </div>
-            <div class="card">
-                <div class="card-body">
-                    <div>
-                        <h3 class="card-title text-uppercase">
-                            Añadir Doctor
-                        </h3>
-                        <a class="btn btn-primary" href="/api/doctor/add">Aceptar</a>
+            <div class="col-sm-12 col-md-12 col-lg-4">
+                <div class="card text-white card-color mb-3">
+                    <div class="card-body text-center">
+                        <h3>Añadir Doctor</h3>
+                        <div class="col-12 text-center">
+                            <a class="btn btn-success" href="/api/doctor/add">Aceptar</a>
+                        </div>
                     </div>
-                    <div>
-                        <h3 class="card-title text-uppercase">
-                            Buscar Doctor
-                        </h3>
-                        <a class="btn btn-primary" href="/api/doctor/list">Aceptar</a>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-12 col-lg-4">
+                <div class="card text-white card-color mb-3">
+                    <div class="card-body text-center">
+                        <h3>Buscar Doctor</h3>
+                        <div class="col-12 text-center">
+                            <a class="btn btn-success" href="/api/doctor/list">Aceptar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card text-white card-color mb-3">
+                    <div class="card-body text-center">
+                        <h3>Actualizar Doctor</h3>
+                        <div class="col-12 text-center">
+                            <a class="btn btn-success" href="/api/doctor/update">Aceptar</a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
+</main>
