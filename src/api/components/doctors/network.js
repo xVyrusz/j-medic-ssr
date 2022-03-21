@@ -10,6 +10,14 @@ const controller = require('./controller');
 const checkJwt = require('../../../utils/middlewares/auth/checkJwt');
 const checkRole = require('../../../utils/middlewares/auth/checkRole');
 
+router.get('/', (req, res, next) => {
+    try {
+        res.render('doctors/menu');
+    } catch (error) {
+        next(error);
+    }
+});
+
 router.get('/add', (req, res, next) => {
     try {
         res.render('doctors/add');
@@ -104,8 +112,7 @@ router.get('/list', async (req, res, next) => {
     } catch (error) {
         next(error);
     }
-}
-);
+});
 
 router.get('/list/id', async (req, res, next) => {
     try {
@@ -113,12 +120,10 @@ router.get('/list/id', async (req, res, next) => {
     } catch (error) {
         next(error);
     }
-}
-);
+});
 
 router.post('/list/id', validationHandler({ id: doctorIdSchema }), async (req, res, next) => {
     const { id } = req.body;
-    console.log(id);
 
     try {
         const doctors = await controller.getDoctorById(id);
@@ -132,7 +137,6 @@ router.post('/list/id', validationHandler({ id: doctorIdSchema }), async (req, r
     } catch (error) {
         next(error);
     }
-}
-);
+});
 
 module.exports = router;
