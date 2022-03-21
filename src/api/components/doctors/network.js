@@ -8,7 +8,7 @@ const {
 const validationHandler = require('../../../utils/middlewares/validationHandler');
 const controller = require('./controller');
 const checkJwt = require('../../../utils/middlewares/auth/checkJwt');
-const checkIdRole = require('../../../utils/middlewares/auth/checkId');
+const checkRole = require('../../../utils/middlewares/auth/checkRole');
 
 router.get('/', checkJwt, (req, res, next) => {
     try {
@@ -20,7 +20,7 @@ router.get('/', checkJwt, (req, res, next) => {
     }
 });
 
-router.post('/add', checkJwt, checkIdRole, validationHandler(createDoctorSchema), async (req, res, next) => {
+router.post('/add', checkJwt, checkRole, validationHandler(createDoctorSchema), async (req, res, next) => {
     const {
         firstName,
         lastName,
@@ -55,7 +55,7 @@ router.post('/add', checkJwt, checkIdRole, validationHandler(createDoctorSchema)
     }
 });
 
-router.put('/update', checkJwt, checkIdRole, validationHandler(updateDoctorSchema), async (req, res, next) => {
+router.put('/update', checkJwt, checkRole, validationHandler(updateDoctorSchema), async (req, res, next) => {
     const {
         id,
         firstName,
