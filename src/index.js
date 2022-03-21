@@ -16,7 +16,7 @@ const notFoundHandler = require('./utils/middlewares/notFound');
 const { config } = require('./config/index');
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(express.static(path.join('./ssr/public')))
+app.use(express.static(path.join('./ssr/public')));
 
 // HandleBars
 app.set('views', path.join(__dirname, './ssr/views'));
@@ -31,7 +31,13 @@ app.set('view engine', '.hbs');
 
 // Middlewares
 app.use(cors());
-app.use(helmet());
+app.use(helmet({
+    contentSecurityPolicy: {
+        directives: {
+            scriptSrc: ["https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"]
+        },
+    },
+}));
 if (config.dev) {
     const morgan = require('morgan');
     app.use(morgan('dev'));
