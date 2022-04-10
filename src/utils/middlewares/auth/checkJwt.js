@@ -5,6 +5,7 @@ const boom = require('@hapi/boom');
 module.exports = (req, res, next) => {
     try {
         let token = req.headers.authorization;
+        console.log(req);
         let finalToken;
         if (token) {
             finalToken = token.split(' ')[1];

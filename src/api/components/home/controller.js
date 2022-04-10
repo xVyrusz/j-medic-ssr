@@ -17,7 +17,8 @@ const getDoctorUser = async (user) => {
         return {
             id: dataValues.id,
             username: dataValues.username,
-            license: dataValues.license
+            license: dataValues.license,
+            role: dataValues.role
         };
     } catch (error) {
         console.log(error);

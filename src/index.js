@@ -4,6 +4,7 @@ const app = express();
 const path = require('path');
 const cors = require('cors');
 const helmet = require('helmet');
+const passport = require('passport');
 const router = require('./api/routes/routes');
 const {
     logErrors,
@@ -11,6 +12,7 @@ const {
     wrapErrors
 } = require('./utils/middlewares/errorHandlers');
 const notFoundHandler = require('./utils/middlewares/notFound');
+require('./ssr/lib/passport')
 
 //  Server configs
 const { config } = require('./config/index');
@@ -38,6 +40,8 @@ app.use(helmet({
         },
     },
 }));
+app.use(passport.initialize());
+app.use(passport.session());
 if (config.dev) {
     const morgan = require('morgan');
     app.use(morgan('dev'));

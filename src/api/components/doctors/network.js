@@ -18,7 +18,7 @@ router.get('/', (req, res, next) => {
     }
 });
 
-router.get('/add', (req, res, next) => {
+router.get('/add', checkJwt, checkRole,(req, res, next) => {
     try {
         res.render('doctors/add');
     } catch (error) {
@@ -26,7 +26,7 @@ router.get('/add', (req, res, next) => {
     }
 });
 
-router.post('/add', validationHandler(createDoctorSchema), async (req, res, next) => {
+router.post('/add', checkJwt, checkRole,validationHandler(createDoctorSchema), async (req, res, next) => {
     const {
         firstName,
         lastName,
@@ -61,7 +61,7 @@ router.post('/add', validationHandler(createDoctorSchema), async (req, res, next
     }
 });
 
-router.get('/update', (req, res, next) => {
+router.get('/update', checkJwt, checkRole,(req, res, next) => {
     try {
         res.render('doctors/update');
     } catch (error) {

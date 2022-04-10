@@ -6,6 +6,7 @@ const {
 const validationHandler = require('../../../utils/middlewares/validationHandler');
 const controller = require('./controller');
 const createJwt = require('../../../utils/createJwt');
+const passport = require('passport');
 
 router.get('/', (req, res, next) => {
     try {
@@ -23,6 +24,14 @@ router.get('/home', (req, res, next) => {
     }
 });
 
+router.get('/login', (req, res, next) => {
+    try {
+        res.render('home/login')
+    } catch (error) {
+        next(error);
+    }
+});
+
 router.post('/login', validationHandler(loginSchema) ,async (req, res, next) => {
     try {
         const {
@@ -33,6 +42,11 @@ router.post('/login', validationHandler(loginSchema) ,async (req, res, next) => 
             username,
             password,
         };
+        passport.authenticate('local.login', {
+            successRedirect: '/api/doctor',
+            failureRedirect: '/login',
+            failureFlash: true
+        })(req, res, next)
         const doctorInfo = await controller.getDoctorUser(doctor);
         const jwtCreated = createJwt.createToken(doctorInfo);
         const refreshJwtCreated = createJwt.refreshToken(doctorInfo);
