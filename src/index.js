@@ -4,7 +4,6 @@ const app = express();
 const path = require('path');
 const cors = require('cors');
 const helmet = require('helmet');
-const passport = require('passport');
 const router = require('./api/routes/routes');
 const {
     logErrors,
@@ -40,8 +39,6 @@ app.use(helmet({
         },
     },
 }));
-app.use(passport.initialize());
-app.use(passport.session());
 if (config.dev) {
     const morgan = require('morgan');
     app.use(morgan('dev'));
