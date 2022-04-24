@@ -10,7 +10,7 @@ const controller = require('./controller');
 const checkJwt = require('../../../utils/middlewares/auth/checkJwt');
 const checkRole = require('../../../utils/middlewares/auth/checkRole');
 
-router.get('/', (req, res, next) => {
+router.get('/', async (req, res, next) => {
     try {
         res.render('doctors/menu');
     } catch (error) {
@@ -18,7 +18,7 @@ router.get('/', (req, res, next) => {
     }
 });
 
-router.get('/add', checkJwt, checkRole,(req, res, next) => {
+router.get('/add', async (req, res, next) => {
     try {
         res.render('doctors/add');
     } catch (error) {
@@ -26,7 +26,7 @@ router.get('/add', checkJwt, checkRole,(req, res, next) => {
     }
 });
 
-router.post('/add', checkJwt, checkRole,validationHandler(createDoctorSchema), async (req, res, next) => {
+router.post('/add', validationHandler(createDoctorSchema), async (req, res, next) => {
     const {
         firstName,
         lastName,
@@ -61,7 +61,7 @@ router.post('/add', checkJwt, checkRole,validationHandler(createDoctorSchema), a
     }
 });
 
-router.get('/update', checkJwt, checkRole,(req, res, next) => {
+router.get('/update', async (req, res, next) => {
     try {
         res.render('doctors/update');
     } catch (error) {
@@ -69,7 +69,7 @@ router.get('/update', checkJwt, checkRole,(req, res, next) => {
     }
 });
 
-router.post('/update', checkJwt, checkRole, validationHandler(updateDoctorSchema), async (req, res, next) => {
+router.post('/update', validationHandler(updateDoctorSchema), async (req, res, next) => {
     const {
         id,
         firstName,

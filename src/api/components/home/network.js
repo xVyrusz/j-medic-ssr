@@ -8,7 +8,7 @@ const controller = require('./controller');
 const createJwt = require('../../../utils/createJwt');
 const passport = require('passport');
 
-router.get('/', (req, res, next) => {
+router.get('/', async (req, res, next) => {
     try {
         res.redirect('/home');
     } catch (error) {
@@ -16,7 +16,7 @@ router.get('/', (req, res, next) => {
     }
 });
 
-router.get('/home', (req, res, next) => {
+router.get('/home', async (req, res, next) => {
     try {
         res.render('home/home')
     } catch (error) {
@@ -24,7 +24,7 @@ router.get('/home', (req, res, next) => {
     }
 });
 
-router.get('/login', (req, res, next) => {
+router.get('/login', async (req, res, next) => {
     try {
         res.render('home/login')
     } catch (error) {
@@ -32,7 +32,7 @@ router.get('/login', (req, res, next) => {
     }
 });
 
-router.post('/login', validationHandler(loginSchema) ,async (req, res, next) => {
+router.post('/login', validationHandler(loginSchema), async (req, res, next) => {
     try {
         const {
             username,
