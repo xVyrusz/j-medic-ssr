@@ -10,15 +10,21 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarColor01">
             <ul class="navbar-nav me-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="/home">Home</a>
-                </li>
+                {{#if user}}
                 <li class="nav-item">
                     <a class="nav-link" href="/api/doctor">Menu</a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link" href="/logout">Logout</a>
+                </li>
+                 {{else}}
+                <li class="nav-item">
+                    <a class="nav-link" href="/home">Home</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" href="/login">Login</a>
                 </li>
+                {{/if}}
             </ul>
         </div>
     </div>
