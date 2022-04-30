@@ -14,7 +14,7 @@ passport.use(
     async (req, username, password, done) => {
       try {
         const doctor = await store.doctorByUser(username);
-        if (!doctor) done(null, false, req.flash('message', ''));
+        if (!doctor) return done(null, false, req.flash('message', ''));
 
         const { dataValues } = doctor;
         const passwordMatched = await bcrypt.compare(
@@ -22,9 +22,9 @@ passport.use(
           dataValues.password
         );
         if (!passwordMatched) {
-          done(null, false, req.flash('message', ''));
+          return done(null, false, req.flash('message', ''));
         } else {
-          done(null, doctor, req.flash('success', ''));
+          return done(null, doctor, req.flash('success', ''));
         }
       } catch (error) {
         return done(null, false)
