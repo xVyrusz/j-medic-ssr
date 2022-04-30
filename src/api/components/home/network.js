@@ -7,8 +7,9 @@ const validationHandler = require("../../../utils/middlewares/validationHandler"
 const controller = require("./controller");
 const createJwt = require("../../../utils/createJwt");
 const passport = require("passport");
+const { isLoggedIn ,isNotLoggedIn} = require("../../../ssr/lib/auth");
 
-router.get("/", async (req, res, next) => {
+router.get("/" ,isNotLoggedIn,async (req, res, next) => {
   try {
     res.redirect("/home");
   } catch (error) {
@@ -16,7 +17,7 @@ router.get("/", async (req, res, next) => {
   }
 });
 
-router.get("/home", async (req, res, next) => {
+router.get("/home",isNotLoggedIn, async (req, res, next) => {
   try {
     res.render("home/home");
   } catch (error) {
@@ -24,7 +25,7 @@ router.get("/home", async (req, res, next) => {
   }
 });
 
-router.get("/login", async (req, res, next) => {
+router.get("/login",isNotLoggedIn, async (req, res, next) => {
   try {
     res.render("home/login");
   } catch (error) {
@@ -33,11 +34,12 @@ router.get("/login", async (req, res, next) => {
 });
 
 router.post(
-  "/login",
+  "/login",isNotLoggedIn,
   validationHandler(loginSchema),
   async (req, res, next) => {
     try {
       const { username, password } = req.body;
+      
       const doctor = {
         username,
         password,
@@ -48,15 +50,17 @@ router.post(
         failureFlash: true,
       })(req, res, next);
       const doctorInfo = await controller.getDoctorUser(doctor);
+      //console.log( req.session);
     } catch (error) {
       next(error);
     }
   }
 );
 
-router.get('/logout', (req, res) => {
+router.get('/logout',isLoggedIn, (req, res) => {
   req.session.destroy((err) => {
-    res.redirect('/login') // will always fire after session is destroyed
+    console.log(err)
+    res.redirect('/login')
   })
 });
 

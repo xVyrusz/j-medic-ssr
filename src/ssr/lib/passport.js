@@ -14,7 +14,7 @@ passport.use(
     async (req, username, password, done) => {
       try {
         const doctor = await store.doctorByUser(username);
-        if (!doctor) done(null, false);
+        if (!doctor) done(null, false,req.flash('message', ''));
 
         const { dataValues } = doctor;
         const passwordMatched = await bcrypt.compare(
@@ -22,9 +22,9 @@ passport.use(
           dataValues.password
         );
         if (!passwordMatched) {
-          done(null, false);
+          done(null, false,req.flash('message', ''));
         } else {
-          done(null, doctor);
+          done(null, doctor,req.flash('success', ''));
         }
       } catch (error) {
         return done(null, false)
@@ -39,5 +39,5 @@ passport.serializeUser((user, done) => {
 
 passport.deserializeUser(async (id, done) => {
   const doctor = await store.doctorById(id);
-  done(null, doctor);
+  done(null, doctor.id);
 });

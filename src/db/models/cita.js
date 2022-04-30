@@ -14,7 +14,9 @@ module.exports = (sequelize, DataTypes) => {
         }
     }
     cita.init({
-        date: DataTypes.DATE
+        date: DataTypes.DATE,
+        idPatient: DataTypes.FLOAT,
+        idDoctor: DataTypes.FLOAT,
     }, {
         sequelize,
         modelName: 'cita',

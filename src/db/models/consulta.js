@@ -18,7 +18,9 @@ module.exports = (sequelize, DataTypes) => {
         nameReason: DataTypes.STRING,
         testMade: DataTypes.STRING,
         diagnosis: DataTypes.STRING,
-        treatment: DataTypes.STRING
+        treatment: DataTypes.STRING,
+        idDoctor: DataTypes.FLOAT,
+        idPatient: DataTypes.FLOAT
     }, {
         sequelize,
         modelName: 'consulta',

@@ -34,12 +34,12 @@ const doctorUpdate = async (data) => {
     return await store.doctorUpdate(data);
 };
 
-const getDoctorById = async (id) => {
-    return store.doctorById(id);
+const getDoctorCedula = async (id) => {
+    return store.doctorByLicense(id);
 };
 
 module.exports = {
     doctorCreation,
     doctorUpdate,
-    getDoctorById
+    getDoctorCedula
 };

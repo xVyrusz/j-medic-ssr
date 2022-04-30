@@ -3,13 +3,13 @@ const router = express.Router();
 const {
   createDoctorSchema,
   updateDoctorSchema,
-  doctorIdSchema,
+  cedulaSchema
 } = require("../../../utils/validations/schemas/doctors.schema"); // eslint-disable-line
 const validationHandler = require("../../../utils/middlewares/validationHandler");
 const controller = require("./controller");
 const checkJwt = require("../../../utils/middlewares/auth/checkJwt");
 const checkRole = require("../../../utils/middlewares/auth/checkRole");
-const { isLoggedIn } = require("../../../ssr/lib/auth");
+const { isLoggedIn ,isNotLoggedIn} = require("../../../ssr/lib/auth");
 
 router.get("/", isLoggedIn, async (req, res, next) => {
   try {
@@ -29,7 +29,7 @@ router.get("/add", isLoggedIn, async (req, res, next) => {
 
 router.post(
   "/add",
-  isLoggedIn,
+  isLoggedIn,isNotLoggedIn,
   validationHandler(createDoctorSchema),
   async (req, res, next) => {
     const { firstName, lastName, username, password, license, phone } =
@@ -104,42 +104,55 @@ router.post(
   }
 );
 
-router.get("/list", isLoggedIn, async (req, res, next) => {
+router.get('/list', isLoggedIn, async (req, res, next) => {
   try {
-    res.render("doctors/list");
+      res.render('doctors/list');
   } catch (error) {
-    next(error);
-  }
-});
-
-router.get("/list/id", isLoggedIn, async (req, res, next) => {
-  try {
-    res.render("doctors/listId");
-  } catch (error) {
-    next(error);
-  }
-});
-
-router.post(
-  "/list/id",
-  isLoggedIn,
-  validationHandler({ id: doctorIdSchema }),
-  async (req, res, next) => {
-    const { id } = req.body;
-
-    try {
-      const doctors = await controller.getDoctorById(id);
-      if (doctors) {
-        const doctor = doctors.dataValues;
-        console.log(doctor);
-        res.render("doctors/listIdGet", { doctor });
-      } else {
-        res.render("doctors/dontExist");
-      }
-    } catch (error) {
       next(error);
-    }
   }
-);
+});
+
+router.get('/list/id', isLoggedIn, async (req, res, next) => {
+  try {
+      res.render('doctors/listId');
+  } catch (error) {
+      next(error);
+  }
+});
+
+router.post('/list/id', isLoggedIn, validationHandler({ id: cedulaSchema }), async (req, res, next) => {
+  const { id } = req.body;
+
+  try {
+      const doctors = await controller.getDoctorCedula(id);
+      if (doctors) {
+          const doctor = doctors.dataValues;
+          console.log(doctor);
+          res.render('doctors/listIdGet', { doctor });
+      } else {
+          res.render('doctors/dontExist');
+      }
+  } catch (error) {
+      next(error);
+  }
+});
+
+router.post('/list/up', isLoggedIn, validationHandler({ id: cedulaSchema }), async (req, res, next) => {
+  const { id } = req.body;
+
+  try {
+      const doctors = await controller.getDoctorCedula(id);
+      if (doctors) {
+          const doctor = doctors.dataValues;
+          console.log(doctor);
+          res.render('doctors/listUpdateGet', { doctor });
+      } else {
+          res.render('doctors/dontExist');
+      }
+  } catch (error) {
+      next(error);
+  }
+});
+
 
 module.exports = router;

@@ -1,0 +1,54 @@
+<main id="main">
+    <div class="container p-4">
+        <div class="row">
+            <div class="col-md-10 mx-auto">
+                <div class="col-12 text-center">
+                    <h1>Actualizar paciente</h1>
+                </div>
+                <div class="card text-white card-color mb-1">
+                    <div class="card-body">
+                        <form class="row g-3" action="/api/patients/update" method="post">
+                                <input type="hidden" class="form-control" name="id" value="{{patient.id}}" >
+                            <div class="col-sm-12 col-md-6 col-lg-4">
+                                <label class="form-label">Nombre(s)</label>
+                                <input type="text" class="form-control" name="firstName" value="{{patient.firstName}}">
+                            </div>
+                            <div class="col-sm-12 col-md-6 col-lg-4">
+                                <label class="form-label">Apellidos</label>
+                                <input type="text" class="form-control" name="lastName" value="{{patient.lastName}}">
+                            </div>
+                            <div class="col-sm-12 col-md-6 col-lg-4">
+                                <label class="form-label">Genero</label>
+                                 <input type="text" class="form-control" name="gender" value="{{patient.gender}}">
+                            </div>
+                            <div class="col-sm-12 col-md-6 col-lg-4">
+                                <label class="form-label">Altura</label>
+                                <input type="text" class="form-control" name="height" value="{{patient.height}}">
+                            </div>
+                            <div class="col-sm-12 col-md-6 col-lg-4">
+                                <label class="form-label">Peso</label>
+                                <input type="text" class="form-control" name="weight" value="{{patient.weight}}">
+                            </div>
+                            <div class="col-sm-12 col-md-6 col-lg-4">
+                                <label class="form-label">Edad</label>
+                                <input type="number" class="form-control" name="age" value="{{patient.age}}">
+                            </div>
+                            <div class="col-sm-12 col-md-6 col-lg-4">
+                                <label class="form-label">Teléfono</label>
+                                <input type="number" class="form-control" name="phone" value="{{patient.phone}}">
+                            </div>
+                            <div class="col-sm-12 col-md-6 col-lg-4">
+                                <label class="form-label">Tipo de sangre</label>
+                                <input type="text" class="form-control" name="blood" value="{{patient.blood}}">
+                            </div>
+                            <div class="col-12">
+                                <button class="btn btn-success" type="submit">Actualizar</button>
+                                <a class="btn btn-danger ms-4" href="/api/patients">Regresar</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>

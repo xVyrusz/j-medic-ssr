@@ -1,0 +1,50 @@
+<main id="main">
+    <div class="container p-4">
+        <div class="row">
+            <div class="col-md-10 mx-auto">
+                <div class="col-12 text-center">
+                    <h1>Datos del paciente</h1>
+                </div>
+                <div class="card text-white card-color mb-3" style="max-width: 20rem;">
+                    <div class="card-body">
+                        <h3 class="card-title text-uppercase">
+                            Id del paciente:
+                            {{patient.id}}
+                        </h3>
+                        <h3 class="card-title text-uppercase">
+                            Paciente:
+                            {{patient.firstName}} {{patient.lastName}}
+                        </h3>
+                        <h3 class="card-title text-uppercase">
+                            Genero:
+                            {{patient.gender}}
+                        </h3>
+                        <h3 class="card-title text-uppercase">
+                            Altura:
+                            {{patient.height}}
+                        </h3>
+                        <h3 class="card-title text-uppercase">
+                            Peso:
+                            {{patient.weight}}
+                        </h3>
+                        <h3 class="card-title text-uppercase">
+                            Edad:
+                            {{patient.age}}
+                        </h3>
+                        <h3 class="card-title text-uppercase">
+                            Teléfono:
+                            {{patient.phone}}
+                        </h3>
+                        <h3 class="card-title text-uppercase">
+                            Sangre:
+                            {{patient.blood}}
+                        </h3>
+                    </div>
+                    <div class="col-12">
+                        <a class="btn btn-primary" href="/api/patients/list/phone">Regresar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>

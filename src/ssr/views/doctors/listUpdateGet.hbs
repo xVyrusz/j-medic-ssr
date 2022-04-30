@@ -1,0 +1,45 @@
+<main id="main">
+    <div class="container p-4">
+        <div class="row">
+            <div class="col-md-10 mx-auto">
+                <div class="col-12 text-center">
+                    <h1>Actualizar doctor</h1>
+                </div>
+                <div class="card card-color">
+                    <div class="card-body">
+                        <form class="row g-3" action="/api/doctor/update" method="post">
+                                <input type="hidden" class="form-control" name="id" value="{{doctor.id}}" >
+                            <div class="col-sm-12 col-md-6 col-lg-4">
+                                <label class="form-label">Nombre(s)</label>
+                                <input type="text" class="form-control" name="firstName" value="{{doctor.firstName}}">
+                            </div>
+                            <div class="col-sm-12 col-md-6 col-lg-4">
+                                <label class="form-label">Apellidos</label>
+                                <input type="text" class="form-control" name="lastName" value="{{doctor.lastName}}">
+                            </div>
+                            <div class="col-sm-12 col-md-6 col-lg-4">
+                                <label class="form-label">Usuario</label>
+                                <div class="input-group">
+                                    <span class="input-group-text">@</span>
+                                    <input type="text" class="form-control" name="username" value="{{doctor.username}}">
+                                </div>
+                            </div>
+                            <div class="col-sm-12 col-md-6 col-lg-4">
+                                <label class="form-label">Cedula</label>
+                                <input type="number" class="form-control" name="license" value="{{doctor.license}}">
+                            </div>
+                            <div class="col-sm-12 col-md-6 col-lg-4">
+                                <label class="form-label">Teléfono</label>
+                                <input type="number" class="form-control" name="phone" value="{{doctor.phone}}">
+                            </div>
+                            <div class="col-12">
+                                <button class="btn btn-success" type="submit">Actualizar</button>
+                                <a class="btn btn-danger ms-4" href="/api/doctor">Regresar</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>

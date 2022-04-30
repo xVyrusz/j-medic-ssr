@@ -3,18 +3,18 @@
         <div class="row">
             <div class="col-md-10  mx-auto">
                 <div class="col-12 text-center">
-                    <h1>Actualizar doctor por cedula</h1>
+                    <h1>Actualizar cita por fecha de cita</h1>
                 </div>
                 <div class="card text-white card-color mb-3 col-6 mx-auto">
                     <div class="card-body">
-                        <form class="row g-3" action="/api/doctor/list/up" method="post">
-                            <h3>Cedula del doctor</h3>
+                        <form class="row g-3" action="/api/appointment/list/up" method="post">
+                            <h3>Fecha de visita</h3>
                             <div class="col-12">
-                                <input type="number" class="form-control" name="id" autofocus required>
+                                <input type="datetime-local" class="form-control"  id="date"name="date" required>
                             </div>
                             <div class="col-12">
                                 <button class="btn btn-success" type="submit">Buscar</button>
-                                <a class="btn btn-danger ms-2" href="/api/doctor">Regresar</a>
+                                <a class="btn btn-danger ms-2" href="/api/appointment">Regresar</a>
                             </div>
                         </form>
                     </div>

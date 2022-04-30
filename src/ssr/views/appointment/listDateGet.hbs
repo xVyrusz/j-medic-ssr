@@ -3,33 +3,25 @@
         <div class="row">
             <div class="col-md-10 mx-auto">
                 <div class="col-12 text-center">
-                    <h1>Datos del doctor</h1>
+                    <h1>Datos de cita</h1>
                 </div>
                 <div class="card text-white card-color mb-3" style="max-width: 20rem;">
                     <div class="card-body">
                         <h3 class="card-title text-uppercase">
-                            Id:
-                            {{doctor.id}}
+                            Id de cita:
+                            {{appointment.id}}
                         </h3>
                         <h3 class="card-title text-uppercase">
-                            Doctor:
-                            {{doctor.firstName}} {{doctor.lastName}}
+                            Paciente:
+                            {{appointment.idPatient}} 
                         </h3>
                         <h3 class="card-title text-uppercase">
-                            Usuario:
-                            {{doctor.username}}
-                        </h3>
-                        <h3 class="card-title text-uppercase">
-                            Cedula:
-                            {{doctor.license}}
-                        </h3>
-                        <h3 class="card-title text-uppercase">
-                            Teléfono:
-                            {{doctor.phone}}
+                            Fecha de visita:
+                            {{appointment.date}} 
                         </h3>
                     </div>
                     <div class="col-12">
-                        <a class="btn btn-primary" href="/api/doctor/list/id">Regresar</a>
+                        <a class="btn btn-primary" href="/api/appointment/list/date">Regresar</a>
                     </div>
                 </div>
             </div>

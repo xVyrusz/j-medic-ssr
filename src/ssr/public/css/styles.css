@@ -91,3 +91,15 @@ body {
 #footer a {
     color: #ffffff8c;
 }
+
+
+
+#place-time {
+   
+    color: white;
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+}
+
+  

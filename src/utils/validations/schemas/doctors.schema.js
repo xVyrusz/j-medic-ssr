@@ -52,5 +52,5 @@ module.exports = {
     createDoctorSchema,
     updateDoctorSchema,
     loginSchema,
-    doctorIdSchema
+    cedulaSchema
 };

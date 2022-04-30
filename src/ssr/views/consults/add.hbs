@@ -1,0 +1,54 @@
+<main id="main">
+    <div class="container p-4">
+        <div class="row">
+            <div class="col-md-10 mx-auto">
+                <div class="col-12 text-center">
+                    <h1>Añadir consulta</h1>
+                </div>
+                <div class="card text-white card-color mb-1">
+                    <div class="card-body">
+                        <form class="row g-3" action="/api/consults/add" method="post">
+                            <div class="col-sm-12 col-md-6 col-lg-4">
+                                <label class="form-label">Id del doctor</label>
+                                <input type="text" class="form-control" name="idDoctor" autofocus required>
+                            </div>
+                            <div class="col-sm-12 col-md-6 col-lg-4">
+                                <label class="form-label">Id del paciente</label>
+                                <input type="text" class="form-control" name="idPatient" required>
+                            </div>
+                            <div class="col-sm-12 col-md-6 col-lg-4">
+                                <label class="form-label">Fecha de visita</label>
+                                <input type="datetime-local" class="form-control" id="dateVisit" name="dateVisit" required>
+                            </div>
+                            <div class="col-sm-12 col-md-6 col-lg-4">
+                                <label class="form-label">Motivo de consulta</label>
+                                <select class="form-select" aria-label="Default select example" name="nameReason" id="nameReason" required>
+                                <option Motivo </option>
+                                <option value="Consulta general">Consulta general</option>
+                                <option value="Curaciones">Curaciones</option>
+                                <option value="Exámenes">Exámenes</option>
+                                </select>
+                            </div>
+                            <div class="col-sm-12 col-md-6 col-lg-4">
+                                <label class="form-label">Pruebas realizadas</label>
+                                <textarea type="textarea" class="form-control" name="testMade"rows="1" required></textarea>
+                            </div>
+                            <div class="col-sm-12 col-md-6 col-lg-4">
+                                <label class="form-label">Diagnostico</label>
+                                <textarea type="textarea" class="form-control" name="diagnosis" rows="1" required></textarea>
+                            </div>
+                            <div class="col-sm-12 col-md-6 col-lg-4">
+                                <label class="form-label">Tratamiento</label>
+                                <textarea type="text" class="form-control" name="treatment" rows="1" required></textarea>
+                            </div>
+                            <div class="col-12">
+                                <button class="btn btn-success" type="submit">Registrar</button>
+                                <a class="btn btn-danger ms-4" href="/api/consults">Regresar</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
