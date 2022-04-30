@@ -1,67 +1,67 @@
 <main id="main">
-    <div class="container p-4">
-        <div class="row">
-            <div class="col-md-10 mx-auto">
-                <div class="col-12 text-center">
-                    <h1>Añadir paciente</h1>
-                </div>
-                <div class="card text-white card-color mb-1">
-                    <div class="card-body">
-                        <form class="row g-3" action="/api/patients/add" method="post">
-                            <div class="col-sm-12 col-md-6 col-lg-4">
-                                <label class="form-label">Nombre(s)</label>
-                                <input type="text" class="form-control" name="firstName" autofocus required>
-                            </div>
-                            <div class="col-sm-12 col-md-6 col-lg-4">
-                                <label class="form-label">Apellidos</label>
-                                <input type="text" class="form-control" name="lastName" required>
-                            </div>
-                            <div class="col-sm-12 col-md-6 col-lg-4">
-                                <label class="form-label">Genero</label>
-                                <select class="form-select" aria-label="Default select example" name="gender" id="gender" required>
-                                <option Genero </option>
-                                <option value="Masculino">Masculino</option>
-                                <option value="Femenino">Femenino</option>
-                                </select>
-                            </div>
-                            <div class="col-sm-12 col-md-6 col-lg-4">
-                                <label class="form-label">Altura</label>
-                                <input type="text" class="form-control" name="height" required>
-                            </div>
-                            <div class="col-sm-12 col-md-6 col-lg-4">
-                                <label class="form-label">Peso</label>
-                                <input type="text" class="form-control" name="weight" required>
-                            </div>
-                            <div class="col-sm-12 col-md-6 col-lg-4">
-                                <label class="form-label">Edad</label>
-                                <input type="number" class="form-control" name="age" required>
-                            </div>
-                            <div class="col-sm-12 col-md-6 col-lg-4">
-                                <label class="form-label">Teléfono</label>
-                                <input type="number" class="form-control" name="phone" required>
-                            </div>
-                            <div class="col-sm-12 col-md-6 col-lg-4">
-                                <label class="form-label">Tipo de sangre</label>
-                                <select class="form-select" aria-label="Default select example" name="blood" id="blood" required>
-                                <option Tipo de sangre </option>
-                                <option value="A+">A+</option>
-                                <option value="A-">A-</option>
-                                <option value="AB+">AB+</option>
-                                <option value="AB-">AB-</option>
-                                <option value="B+">B+</option>
-                                <option value="B-">B-</option>
-                                <option value="O+">O+</option>
-                                <option value="O-">O-</option>
-                                </select>
-                            </div>
-                            <div class="col-12">
-                                <button class="btn btn-success" type="submit">Registrar</button>
-                                <a class="btn btn-danger ms-4" href="/api/patients">Regresar</a>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
+  <div class="container p-4">
+    <div class="row">
+      <div class="col-md-10 mx-auto">
+        <div class="col-12 text-center">
+          <h1>Añadir paciente</h1>
         </div>
+        <div class="card text-white card-color mb-1">
+          <div class="card-body">
+            <form class="row g-3" action="/api/patients/add" method="post">
+              <div class="col-sm-12 col-md-6 col-lg-4">
+                <label class="form-label">Nombre(s)</label>
+                <input type="text" class="form-control" name="firstName" autofocus required>
+              </div>
+              <div class="col-sm-12 col-md-6 col-lg-4">
+                <label class="form-label">Apellidos</label>
+                <input type="text" class="form-control" name="lastName" required>
+              </div>
+              <div class="col-sm-12 col-md-6 col-lg-4">
+                <label class="form-label">Genero</label>
+                <select class="form-select" aria-label="Default select example" name="gender" id="gender" required>
+                  <option Genero </option>
+                  <option value="Masculino">Masculino</option>
+                  <option value="Femenino">Femenino</option>
+                </select>
+              </div>
+              <div class="col-sm-12 col-md-6 col-lg-4">
+                <label class="form-label">Altura</label>
+                <input type="text" class="form-control" name="height" required>
+              </div>
+              <div class="col-sm-12 col-md-6 col-lg-4">
+                <label class="form-label">Peso</label>
+                <input type="text" class="form-control" name="weight" required>
+              </div>
+              <div class="col-sm-12 col-md-6 col-lg-4">
+                <label class="form-label">Edad</label>
+                <input type="number" class="form-control" name="age" required>
+              </div>
+              <div class="col-sm-12 col-md-6 col-lg-4">
+                <label class="form-label">Teléfono</label>
+                <input type="number" class="form-control" name="phone" required>
+              </div>
+              <div class="col-sm-12 col-md-6 col-lg-4">
+                <label class="form-label">Tipo de sangre</label>
+                <select class="form-select" aria-label="Default select example" name="blood" id="blood" required>
+                  <option Tipo de sangre </option>
+                  <option value="A+">A+</option>
+                  <option value="A-">A-</option>
+                  <option value="AB+">AB+</option>
+                  <option value="AB-">AB-</option>
+                  <option value="B+">B+</option>
+                  <option value="B-">B-</option>
+                  <option value="O+">O+</option>
+                  <option value="O-">O-</option>
+                </select>
+              </div>
+              <div class="col-12">
+                <button class="btn btn-success" type="submit">Registrar</button>
+                <a class="btn btn-danger ms-4" href="/api/patients">Regresar</a>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
 </main>

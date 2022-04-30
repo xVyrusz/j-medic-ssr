@@ -1,25 +1,34 @@
 <main id="main">
-    <div class="container p-4">
-        <div class="row">
-            <div class="col-md-10  mx-auto">
-                <div class="col-12 text-center">
-                    <h1>Buscar doctor por cedula</h1>
-                </div>
-                <div class="card text-white card-color mb-3 col-6 mx-auto">
-                    <div class="card-body">
-                        <form class="row g-3" action="/api/doctor/list/id" method="post">
-                            <h3>Cedula del doctor</h3>
-                            <div class="col-12">
-                                <input type="number" class="form-control" name="id" autofocus required>
-                            </div>
-                            <div class="col-12">
-                                <button class="btn btn-success" type="submit">Buscar</button>
-                                <a class="btn btn-danger ms-2" href="/api/doctor/list">Regresar</a>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
+  <div class="container p-4">
+    <div class="row">
+      <div class="col-md-10 mx-auto">
+        <div class="col-12 text-center">
+          <h1>Buscar doctor por cedula</h1>
         </div>
+        <div class="card text-white card-color mb-3 col-6 mx-auto">
+          <div class="card-body">
+            <form class="row g-3" action="/api/doctor/list/id" method="post">
+              <h3>Cedula del doctor</h3>
+              <div class="col-12">
+                <input
+                  type="number"
+                  class="form-control"
+                  name="id"
+                  autofocus
+                  required
+                />
+              </div>
+              <div class="col-12">
+                <button class="btn btn-success" type="submit">Buscar</button>
+                <a
+                  class="btn btn-danger ms-2"
+                  href="/api/doctor/list"
+                >Regresar</a>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
 </main>

@@ -13,28 +13,28 @@ const IdPatientSchema = joi.number();
 
 
 const createConsultSchema = {
-    dateVisit: dateSchema.required(),
-    nameReason: nameReasonSchema.required(),
-    testMade: testMadeSchema.required(),
-    diagnosis: diagnosisSchema.required(),
-    treatment: treatmentSchema.required(),
-    idDoctor: IdDoctorSchema.required(),
-    idPatient: IdPatientSchema.required()
+  dateVisit: dateSchema.required(),
+  nameReason: nameReasonSchema.required(),
+  testMade: testMadeSchema.required(),
+  diagnosis: diagnosisSchema.required(),
+  treatment: treatmentSchema.required(),
+  idDoctor: IdDoctorSchema.required(),
+  idPatient: IdPatientSchema.required()
 };
 const updateConsultSchema = {
-    id: consultIdSchema,
-    dateVisit: dateUpdateSchema,
-    nameReason: nameReasonSchema,
-    testMade: testMadeSchema,
-    diagnosis: diagnosisSchema,
-    treatment: treatmentSchema,
-    idDoctor: IdDoctorSchema,
-    idPatient: IdPatientSchema
+  id: consultIdSchema,
+  dateVisit: dateUpdateSchema,
+  nameReason: nameReasonSchema,
+  testMade: testMadeSchema,
+  diagnosis: diagnosisSchema,
+  treatment: treatmentSchema,
+  idDoctor: IdDoctorSchema,
+  idPatient: IdPatientSchema
 };
 module.exports = {
-    createConsultSchema,
-    updateConsultSchema,
-    consultIdSchema,
-    dateSchema,
-    dateUpdateSchema
+  createConsultSchema,
+  updateConsultSchema,
+  consultIdSchema,
+  dateSchema,
+  dateUpdateSchema
 };

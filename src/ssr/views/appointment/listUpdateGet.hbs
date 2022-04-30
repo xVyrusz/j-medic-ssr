@@ -1,30 +1,56 @@
 <main id="main">
-    <div class="container p-4">
-        <div class="row">
-            <div class="col-md-10 mx-auto">
-                <div class="col-12 text-center">
-                    <h1>Actualizar cita</h1>
-                </div>
-                <div class="card text-white card-color mb-1">
-                    <div class="card-body">
-                        <form class="row g-3" action="/api/appointment/update" method="post">
-                            <input type="hidden" class="form-control" name="id" value="{{appointment.id}}">
-                            <div class="col-sm-12 col-md-6 col-lg-4">
-                                <label class="form-label">Id de Paciente</label>
-                                <input type="number" class="form-control" name="idPatient" value="{{appointment.idPatient}}">
-                            </div>
-                            <div class="col-sm-12 col-md-6 col-lg-4">
-                                <label class="form-label">Fecha de visita</label>
-                                <input type="text" class="form-control" id="date" name="date" value=" {{appointment.date}}">
-                            </div>
-                            <div class="col-12">
-                                <button class="btn btn-success" type="submit">Actualizar</button>
-                                <a class="btn btn-danger ms-4" href="/api/appointment/update">Regresar</a>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
+  <div class="container p-4">
+    <div class="row">
+      <div class="col-md-10 mx-auto">
+        <div class="col-12 text-center">
+          <h1>Actualizar cita</h1>
         </div>
+        <div class="card text-white card-color mb-1">
+          <div class="card-body">
+            <form
+              class="row g-3"
+              action="/api/appointment/update"
+              method="post"
+            >
+              <input
+                type="hidden"
+                class="form-control"
+                name="id"
+                value="{{appointment.id}}"
+              />
+              <div class="col-sm-12 col-md-6 col-lg-4">
+                <label class="form-label">Id de Paciente</label>
+                <input
+                  type="number"
+                  class="form-control"
+                  name="idPatient"
+                  value="{{appointment.idPatient}}"
+                />
+              </div>
+              <div class="col-sm-12 col-md-6 col-lg-4">
+                <label class="form-label">Fecha de visita</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="date"
+                  name="date"
+                  value=" {{appointment.date}}"
+                />
+              </div>
+              <div class="col-12">
+                <button
+                  class="btn btn-success"
+                  type="submit"
+                >Actualizar</button>
+                <a
+                  class="btn btn-danger ms-4"
+                  href="/api/appointment/update"
+                >Regresar</a>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
 </main>

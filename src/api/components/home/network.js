@@ -7,9 +7,9 @@ const validationHandler = require("../../../utils/middlewares/validationHandler"
 const controller = require("./controller");
 const createJwt = require("../../../utils/createJwt");
 const passport = require("passport");
-const { isLoggedIn ,isNotLoggedIn} = require("../../../ssr/lib/auth");
+const { isLoggedIn, isNotLoggedIn } = require("../../../ssr/lib/auth");
 
-router.get("/" ,isNotLoggedIn,async (req, res, next) => {
+router.get("/", isNotLoggedIn, async (req, res, next) => {
   try {
     res.redirect("/home");
   } catch (error) {
@@ -17,7 +17,7 @@ router.get("/" ,isNotLoggedIn,async (req, res, next) => {
   }
 });
 
-router.get("/home",isNotLoggedIn, async (req, res, next) => {
+router.get("/home", isNotLoggedIn, async (req, res, next) => {
   try {
     res.render("home/home");
   } catch (error) {
@@ -25,7 +25,7 @@ router.get("/home",isNotLoggedIn, async (req, res, next) => {
   }
 });
 
-router.get("/login",isNotLoggedIn, async (req, res, next) => {
+router.get("/login", isNotLoggedIn, async (req, res, next) => {
   try {
     res.render("home/login");
   } catch (error) {
@@ -34,12 +34,12 @@ router.get("/login",isNotLoggedIn, async (req, res, next) => {
 });
 
 router.post(
-  "/login",isNotLoggedIn,
+  "/login", isNotLoggedIn,
   validationHandler(loginSchema),
   async (req, res, next) => {
     try {
       const { username, password } = req.body;
-      
+
       const doctor = {
         username,
         password,
@@ -57,7 +57,7 @@ router.post(
   }
 );
 
-router.get('/logout',isLoggedIn, (req, res) => {
+router.get('/logout', isLoggedIn, (req, res) => {
   req.session.destroy((err) => {
     console.log(err)
     res.redirect('/login')

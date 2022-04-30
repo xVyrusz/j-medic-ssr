@@ -9,19 +9,19 @@ const IdDoctorSchema = joi.number();
 
 
 const createAppointmentSchema = {
-    date: dateSchema.required(),
-    idPatient: IdPatientSchema.required(),
-    idDoctor: IdDoctorSchema.required()
+  date: dateSchema.required(),
+  idPatient: IdPatientSchema.required(),
+  idDoctor: IdDoctorSchema.required()
 };
 const updateAppointmentSchema = {
-    id: appointmentIdSchema,
-    date: dateUpdateSchema,
-    idPatient: IdPatientSchema,
-    idDoctor: IdDoctorSchema
+  id: appointmentIdSchema,
+  date: dateUpdateSchema,
+  idPatient: IdPatientSchema,
+  idDoctor: IdDoctorSchema
 };
 module.exports = {
-    createAppointmentSchema,
-    updateAppointmentSchema,
-    appointmentIdSchema,
-    dateSchema
+  createAppointmentSchema,
+  updateAppointmentSchema,
+  appointmentIdSchema,
+  dateSchema
 };
