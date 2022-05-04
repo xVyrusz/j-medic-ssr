@@ -116,7 +116,7 @@ router.post('/list/id', isLoggedIn, validationHandler({ id: appointmentIdSchema 
       console.log(appointment);
       res.render('appointment/listIdGet', { appointment });
     } else {
-      res.render('appointment/dontExist');
+      next(error);
     }
   } catch (error) {
     next(error);
