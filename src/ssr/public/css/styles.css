@@ -81,12 +81,11 @@ body {
   background: linear-gradient(90deg, #1c3643, #273b47 25%, #1e5472);
 }
 
-#main {
+#img {
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
     url("../images/Doctor1.jpg");
   height: 100%;
   background-position: center;
-  background-repeat: no-repeat;
   background-size: cover;
 }
 
