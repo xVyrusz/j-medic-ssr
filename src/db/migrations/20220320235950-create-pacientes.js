@@ -21,7 +21,7 @@ module.exports = {
                 allowNull: false,
                 type: Sequelize.STRING
             },
-            weight: {
+            height: {
                 allowNull: false,
                 type: Sequelize.FLOAT
             },
