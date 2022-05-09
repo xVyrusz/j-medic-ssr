@@ -43,18 +43,12 @@ router.post(
       phone,
     };
     try {
-      const doctor = await controller.doctorCreation(newDoctor);
-      res.status(201).json({
-        Message: "Created",
-        Doctor: {
-          id: doctor.id,
-          firstName: doctor.firstName,
-          lastName: doctor.lastName,
-          username: doctor.username,
-          license: doctor.license,
-          phone: doctor.phone,
-        },
-      });
+      const doctors = await controller.doctorCreation(newDoctor);
+      if (doctors) {
+        const doctor = doctors.dataValues;
+        //console.log(doctor);
+        res.render('doctors/listaddGet', { doctor });
+      }
     } catch (error) {
       next(error);
     }
@@ -87,17 +81,8 @@ router.post(
     };
     try {
       const doctor = await controller.doctorUpdate(updateDoctor);
-      res.status(201).json({
-        Message: "Updated",
-        Doctor: {
-          id: doctor.id,
-          firstName: doctor.firstName,
-          lastName: doctor.lastName,
-          username: doctor.username,
-          license: doctor.license,
-          phone: doctor.phone,
-        },
-      });
+      //console.log(doctor);
+      res.render("doctors/update");
     } catch (error) {
       next(error);
     }
@@ -144,7 +129,7 @@ router.post('/list/up', isLoggedIn, validationHandler({ id: cedulaSchema }), asy
     const doctors = await controller.getDoctorCedula(id);
     if (doctors) {
       const doctor = doctors.dataValues;
-      console.log(doctor);
+      //console.log(doctor);
       res.render('doctors/listUpdateGet', { doctor });
     } else {
       res.render('doctors/dontExist');

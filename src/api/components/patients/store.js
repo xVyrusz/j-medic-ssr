@@ -42,7 +42,7 @@ const getPatientById = async (id) => {
 };
 
 const getPatientByPhone = async (phone) => {
-  return await Pacientes.findOne({
+  return await Pacientes.findAll({
     where: {
       phone: phone
     }

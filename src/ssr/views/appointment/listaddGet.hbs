@@ -1,0 +1,33 @@
+<main id="main">
+  <div class="container p-4">
+    <div class="row">
+      <div class="col-md-10 mx-auto">
+        <div class="col-12 text-center">
+          <h1>Datos de cita</h1>
+        </div>
+        <div class="card text-white card-color mb-3">
+          <div class="card-body">
+            <h3 class="card-title text-uppercase">
+              Id de cita:
+              {{appointment.id}}
+            </h3>
+            <h3 class="card-title text-uppercase">
+              Id de paciente:
+              {{appointment.idPatient}}
+            </h3>
+            <h3 class="card-title text-uppercase">
+              Fecha de visita:
+              {{appointment.date}}
+            </h3>
+          </div>
+          <div class="col-12">
+            <a
+              class="btn btn-primary"
+              href="/api/appointment/add"
+            >Regresar</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>

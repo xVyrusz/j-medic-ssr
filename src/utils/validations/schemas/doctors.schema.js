@@ -35,6 +35,7 @@ const createDoctorSchema = {
 };
 
 const updateDoctorSchema = {
+  id:doctorIdSchema,
   firstName: firstNameSchema,
   lastName: lastNameSchema,
   username: usernameSchema,

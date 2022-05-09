@@ -43,15 +43,12 @@ router.post('/add', isLoggedIn, validationHandler(createAppointmentSchema), asyn
   };
 
   try {
-    const appointment = await controller.appointmentCreation(newAppointment);
-    res.status(201).json({
-      Message: 'Create',
-      Cita: {
-        date: appointment.date,
-        idDoctor: appointment.idDoctor,
-        idPatient: appointment.idPatient
-      }
-    });
+    const appointments = await controller.appointmentCreation(newAppointment);
+    if (appointments) {
+      const appointment = appointments.dataValues;
+      console.log(appointment);
+      res.render('appointment/listaddGet', { appointment });
+    }
   } catch (error) {
     next(error);
   }
@@ -79,12 +76,7 @@ router.post('/update', isLoggedIn, validationHandler(updateAppointmentSchema), a
   };
   try {
     const cita = await controller.appointmentUpdate(updateAppointment);
-    res.status(201).json({
-      Message: 'Updated',
-      Cita: {
-        "id": cita.id,
-      }
-    });
+    res.render('appointment/update');
   } catch (error) {
     next(error);
   }
@@ -116,7 +108,7 @@ router.post('/list/id', isLoggedIn, validationHandler({ id: appointmentIdSchema 
       console.log(appointment);
       res.render('appointment/listIdGet', { appointment });
     } else {
-      next(error);
+      res.render('appointment/dontExist');
     }
   } catch (error) {
     next(error);
@@ -141,7 +133,7 @@ router.post('/list/date', isLoggedIn, validationHandler({ date: dateSchema }), a
       console.log(appointment);
       res.render('appointment/listDateGet', { appointment });
     } else {
-      next(error);
+      res.render('appointment/dontExist');
     }
   } catch (error) {
     next(error);
@@ -159,7 +151,7 @@ router.post('/list/up', isLoggedIn, validationHandler({ date: dateSchema }), asy
       console.log(appointment);
       res.render('appointment/listUpdateGet', { appointment });
     } else {
-      next(error);
+      res.render('appointment/dontExist');
     }
   } catch (error) {
     next(error);

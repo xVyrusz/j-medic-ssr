@@ -49,21 +49,12 @@ router.post('/add', isLoggedIn, validationHandler(createPatientSchema), async (r
     blood
   };
   try {
-    const patient = await controller.patientCreation(newPatient);
-    res.status(201).json({
-      Message: 'Created',
-      Patient: {
-        "id": patient.id,
-        "firstName": patient.firstName,
-        "lastName": patient.lastName,
-        "gender": patient.gender,
-        "weight": patient.weight,
-        "height": patient.height,
-        "age": patient.age,
-        "phone": patient.phone,
-        "blood": patient.blood
-      }
-    });
+    const patientnew = await controller.patientCreation(newPatient);
+    if (patientnew) {
+      const patient = patientnew.dataValues;
+      console.log(patient);
+      res.render('patients/listaddGet', { patient });
+    }
   } catch (error) {
     next(error);
   }
@@ -102,20 +93,7 @@ router.post('/update', isLoggedIn, validationHandler(updatePatientSchema), async
   };
   try {
     const patient = await controller.patientUpdate(updatePatient);
-    res.status(201).json({
-      Message: 'Updated',
-      Patient: {
-        "id": patient.id,
-        "firstName": patient.firstName,
-        "lastName": patient.lastName,
-        "gender": patient.gender,
-        "weight": patient.weight,
-        "height": patient.height,
-        "age": patient.age,
-        "phone": patient.phone,
-        "blood": patient.blood
-      }
-    });
+      res.render('patients/update');
   } catch (error) {
     next(error);
   }
@@ -172,7 +150,7 @@ router.post('/list/phone', isLoggedIn, validationHandler({ phone: phoneSchema })
       console.log(patient);
       res.render('patients/listPhoneGet', { patient });
     } else {
-      res.render('patients/dontExistPhone');
+      res.render('patients/dontExist');
     }
   } catch (error) {
     next(error);

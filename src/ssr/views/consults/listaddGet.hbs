@@ -1,0 +1,50 @@
+<main id="main">
+  <div class="container p-4">
+    <div class="row">
+      <div class="col-md-10 mx-auto">
+        <div class="col-12 text-center">
+          <h1>Datos de Consulta</h1>
+        </div>
+        <div class="card text-white card-color mb-3" >
+          <div class="card-body">
+            <h3 class="card-title text-uppercase">
+              Id de consulta:
+              {{consult.id}}
+            </h3>
+            <h3 class="card-title text-uppercase">
+              Id de doctor:
+              {{consult.idDoctor}}
+            </h3>
+            <h3 class="card-title text-uppercase">
+              Id de paciente:
+              {{consult.idPatient}}
+            </h3>
+            <h3 class="card-title text-uppercase">
+              Fecha de visita:
+              {{consult.dateVisit}}
+            </h3>
+            <h3 class="card-title text-uppercase">
+              Motivo de consulta:
+              {{consult.nameReason}}
+            </h3>
+            <h3 class="card-title text-uppercase">
+              Pruebas realizadas:
+              {{consult.testMade}}
+            </h3>
+            <h3 class="card-title text-uppercase">
+              Diagnostico:
+              {{consult.diagnosis}}
+            </h3>
+            <h3 class="card-title text-uppercase">
+              Tratamiento:
+              {{consult.treatment}}
+            </h3>
+          </div>
+          <div class="col-12">
+            <a class="btn btn-primary" href="/api/consults/add">Regresar</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>

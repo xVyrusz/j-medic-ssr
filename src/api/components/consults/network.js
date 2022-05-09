@@ -49,20 +49,12 @@ router.post('/add', isLoggedIn, validationHandler(createConsultSchema), async (r
     idPatient
   };
   try {
-    const consult = await controller.consultCreation(newConsult);
-    res.status(201).json({
-      Message: 'Create',
-      Consult: {
-        "id": consult.id,
-        "dateVisit": consult.dateVisit,
-        "nameReason": consult.nameReason,
-        "testMade": consult.testMade,
-        "diagnosis": consult.diagnosis,
-        "treatment": consult.treatment,
-        "idDoctor": consult.idDoctor,
-        "idPatient": consult.idPatient
-      }
-    });
+    const consults = await controller.consultCreation(newConsult);
+    if (consults) {
+      const consult = consults.dataValues;
+      console.log(consult);
+      res.render('consults/listaddGet', { consult });
+    } 
   } catch (error) {
     next(error);
   }
@@ -100,19 +92,7 @@ router.post('/update', isLoggedIn, validationHandler(updateConsultSchema), async
   };
   try {
     const consult = await controller.consultUpdate(updateConsult);
-    res.status(201).json({
-      Message: 'Updated',
-      Consult: {
-        "id": consult.id,
-        "dateVisit": consult.dateVisit,
-        "nameReason": consult.nameReason,
-        "testMade": consult.testMade,
-        "diagnosis": consult.diagnosis,
-        "treatment": consult.treatment,
-        "idDoctor": consult.idDoctor,
-        "idPatient": consult.idPatient
-      }
-    });
+    res.render('consults/update');
   } catch (error) {
     next(error);
   }
@@ -169,7 +149,7 @@ router.post('/list/date', isLoggedIn, validationHandler({ dateVisit: dateUpdateS
       console.log(consult);
       res.render('consults/listDateGet', { consult });
     } else {
-      res.render('consults/dontExistDate');
+      res.render('consults/dontExist');
     }
   } catch (error) {
     next(error);
