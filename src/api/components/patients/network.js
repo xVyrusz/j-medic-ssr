@@ -50,20 +50,8 @@ router.post('/add', isLoggedIn, validationHandler(createPatientSchema), async (r
   };
   try {
     const patient = await controller.patientCreation(newPatient);
-    res.status(201).json({
-      Message: 'Created',
-      Patient: {
-        "id": patient.id,
-        "firstName": patient.firstName,
-        "lastName": patient.lastName,
-        "gender": patient.gender,
-        "weight": patient.weight,
-        "height": patient.height,
-        "age": patient.age,
-        "phone": patient.phone,
-        "blood": patient.blood
-      }
-    });
+    req.flash('success', 'Paciente Registrado.');
+    res.redirect('/patients/add');
   } catch (error) {
     next(error);
   }
