@@ -29,7 +29,7 @@ router.get("/add", isLoggedIn, async (req, res, next) => {
 
 router.post(
   "/add",
-  isLoggedIn, isNotLoggedIn,
+  isLoggedIn,
   validationHandler(createDoctorSchema),
   async (req, res, next) => {
     const { firstName, lastName, username, password, license, phone } =
