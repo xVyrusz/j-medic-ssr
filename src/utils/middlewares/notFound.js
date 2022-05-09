@@ -5,7 +5,7 @@ const notFoundHandler = (req, res) => {
     output: { statusCode, payload }
   } = boom.notFound();
 
-  res.status(statusCode).json(payload);
+  next(res.redirect(req.url));
 };
 
 module.exports = notFoundHandler;

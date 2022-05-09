@@ -30,8 +30,7 @@ const errorHandler = (err, req, res, next) => { // eslint-disable-line
     output: { statusCode, payload }
   } = err;
 
-  res.status(statusCode);
-  res.json(errorStack(payload, err.stack));
+  next(res.redirect(req.url));
 };
 
 module.exports = {
