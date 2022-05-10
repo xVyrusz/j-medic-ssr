@@ -29,8 +29,7 @@ const errorHandler = (err, req, res, next) => { // eslint-disable-line
   const {
     output: { statusCode, payload }
   } = err;
-
-  next(res.redirect(req.url));
+  res.render("home/errores");
 };
 
 module.exports = {

@@ -1,6 +1,6 @@
 const joi = require('joi');
 
-const baseValidString = joi.string().min(3).max(100);
+const baseValidString = joi.string().min(3).max(100).regex(/^[\w'\-,.][^0-9_!¡?÷?¿/\\+=@#$%ˆ&*(){}|~<>;:[\]]{1,}$/);
 
 // firstNameSchema,
 // lastNameSchema,

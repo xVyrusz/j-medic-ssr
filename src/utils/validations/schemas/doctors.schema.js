@@ -1,10 +1,10 @@
 const joi = require('joi');
 
-const baseValidString = joi.string().min(3).max(100);
+const baseValidString = joi.string().min(3).max(100).regex(/^[\w'\-,.][^0-9_!¡?÷?¿/\\+=@#$%ˆ&*(){}|~<>;:[\]]{1,}$/);
 const doctorIdSchema = joi.number();
 const firstNameSchema = baseValidString;
 const lastNameSchema = baseValidString;
-const usernameSchema = baseValidString;
+const usernameSchema =joi.string().min(3).max(100);
 const passwordSchema = joi
   .string()
   .regex(
