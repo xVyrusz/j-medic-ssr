@@ -7,39 +7,41 @@
         </div>
         <div class="card text-white card-color mb-3">
           <div class="card-body">
+            {{#each patients}} 
             <h3 class="card-title text-uppercase">
               Id del paciente:
-              {{patient.id}}
+               {{this.id}}
             </h3>
             <h3 class="card-title text-uppercase">
               Paciente:
-              {{patient.firstName}}
-              {{patient.lastName}}
+              {{this.firstName}}
+              {{this.lastName}}
             </h3>
             <h3 class="card-title text-uppercase">
               Genero:
-              {{patient.gender}}
+              {{this.gender}}
             </h3>
             <h3 class="card-title text-uppercase">
               Altura:
-              {{patient.height}}
+              {{this.height}}
             </h3>
             <h3 class="card-title text-uppercase">
               Peso:
-              {{patient.weight}}
+              {{this.weight}}
             </h3>
             <h3 class="card-title text-uppercase">
               Edad:
-              {{patient.age}}
+              {{this.age}}
             </h3>
             <h3 class="card-title text-uppercase">
               Teléfono:
-              {{patient.phone}}
+              {{this.phone}}
             </h3>
             <h3 class="card-title text-uppercase">
               Sangre:
-              {{patient.blood}}
+              {{this.blood}}
             </h3>
+            {{/each}}
           </div>
           <div class="col-12">
             <a

@@ -146,9 +146,11 @@ router.post('/list/phone', isLoggedIn, validationHandler({ phone: phoneSchema })
   try {
     const patients = await controller.getPatientByPhone(phone);
     if (patients) {
-      const patient = patients.dataValues;
-      console.log(patient);
-      res.render('patients/listPhoneGet', { patient });
+      const patient = [patients];
+      patient.forEach(element => {
+        console.log(element);
+        res.render('patients/listPhoneGet', { patients });
+      });
     } else {
       res.render('patients/dontExist');
     }
