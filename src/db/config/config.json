@@ -7,8 +7,8 @@
     "dialect": "mysql"
   },
   "development": {
-    "username": "ajdwvk3m5wzk",
-    "password": "pscale_pw_rC7m_UaN-u4qWIffwahmHG8OmNqdmXijtuJKl3HH9Ns",
+    "username": "i0nst9cm3ume",
+    "password": "pscale_pw_DwSQyC4LePZ_bYfGJQ38YgVgST01zC8YQCezuLIbqfQ",
     "database": "j_medic",
     "host": "3ec20w7luvep.us-east-4.psdb.cloud",
     "dialect": "mysql",
