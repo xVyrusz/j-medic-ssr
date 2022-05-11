@@ -64,4 +64,12 @@ router.get('/logout', isLoggedIn, (req, res) => {
   })
 });
 
+
+router.get("/terminos", async (req, res, next) => {
+  try {
+    res.render("home/terminos");
+  } catch (error) {
+    next(error);
+  }
+});
 module.exports = router;
