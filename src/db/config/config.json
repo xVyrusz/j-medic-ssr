@@ -1,17 +1,22 @@
 {
-  "development": {
+  "development2": {
     "username": "root",
     "password": "root",
     "database": "j_medic",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
-  "test": {
-    "username": "root",
-    "password": "root",
+  "development": {
+    "username": "lp5tmsc5klzq",
+    "password": "pscale_pw_pLqZ6g2V6y0C3snc3NA5rtXqZLu2c45NxOkfrbqfyfo",
     "database": "j_medic",
-    "host": "127.0.0.1",
-    "dialect": "mysql"
+    "host": "3ec20w7luvep.us-east-4.psdb.cloud",
+    "dialect": "mysql",
+    "dialectOptions": {
+      "ssl": {
+        "required": false
+      }
+    }
   },
   "production": {
     "username": "root",
