@@ -1,11 +1,4 @@
 {
-  "development2": {
-    "username": "root",
-    "password": "root",
-    "database": "j_medic",
-    "host": "127.0.0.1",
-    "dialect": "mysql"
-  },
   "development": {
     "username": "admin",
     "password": "qawsed123",
@@ -13,11 +6,18 @@
     "host": "j-medic.czo8gnymvikc.us-east-2.rds.amazonaws.com",
     "dialect": "mysql"
   },
-  "production": {
-    "username": "root",
-    "password": "root",
+  "test": {
+    "username": "admin",
+    "password": "qawsed123",
     "database": "j_medic",
-    "host": "127.0.0.1",
+    "host": "j-medic.czo8gnymvikc.us-east-2.rds.amazonaws.com",
+    "dialect": "mysql"
+  },
+  "production": {
+    "username": "admin",
+    "password": "qawsed123",
+    "database": "j_medic",
+    "host": "j-medic.czo8gnymvikc.us-east-2.rds.amazonaws.com",
     "dialect": "mysql"
   }
 }
