@@ -9,15 +9,15 @@ const createJwt = require("../../../utils/createJwt");
 const passport = require("passport");
 const { isLoggedIn, isNotLoggedIn } = require("../../../ssr/lib/auth");
 
-router.get("/", isNotLoggedIn, async (req, res, next) => {
+router.get("/", async (req, res, next) => {
   try {
-    res.redirect("/home");
+    res.render("home/home");
   } catch (error) {
     next(error);
   }
 });
 
-router.get("/home", isNotLoggedIn, async (req, res, next) => {
+router.get("/home", async (req, res, next) => {
   try {
     res.render("home/home");
   } catch (error) {

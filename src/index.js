@@ -57,7 +57,8 @@ if (config.dev) {
   app.use(morgan("dev"));
 }
 
-var sequelize = new Sequelize("j_medic", "root", "root", {
+var sequelize = new Sequelize("j_medic", "admin", "qawsed123", {
+  host: "j-medic.czo8gnymvikc.us-east-2.rds.amazonaws.com",
   port: 3306,
   logging: console.log,
   dialect: "mysql"
