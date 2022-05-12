@@ -57,7 +57,7 @@ if (config.dev) {
   app.use(morgan("dev"));
 }
 
-var sequelize = new Sequelize("j_medic", "root", "root", {
+var sequelize = new Sequelize("j_medic", "admin", "qwased123", {
   dialect: "mysql"
 });
 

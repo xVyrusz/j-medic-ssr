@@ -7,16 +7,11 @@
     "dialect": "mysql"
   },
   "development": {
-    "username": "i0nst9cm3ume",
-    "password": "pscale_pw_DwSQyC4LePZ_bYfGJQ38YgVgST01zC8YQCezuLIbqfQ",
+    "username": "admin",
+    "password": "qawsed123",
     "database": "j_medic",
-    "host": "3ec20w7luvep.us-east-4.psdb.cloud",
-    "dialect": "mysql",
-    "dialectOptions": {
-      "ssl": {
-        "required": false
-      }
-    }
+    "host": "j-medic.czo8gnymvikc.us-east-2.rds.amazonaws.com",
+    "dialect": "mysql"
   },
   "production": {
     "username": "root",
