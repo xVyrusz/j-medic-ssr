@@ -10,7 +10,8 @@ const {
 } = require("../../../utils/validations/schemas/appointment.schema"); // eslint-disable-line
 const validationHandler = require("../../../utils/middlewares/validationHandler");
 const controller = require("./controller");
-const controllerDoctor =require("../doctors/controller");
+const controllerDoctor = require("../doctors/controller");
+const controllerPatients = require("../patients/controller");
 const checkJwt = require("../../../utils/middlewares/auth/checkJwt");
 const checkRole = require("../../../utils/middlewares/auth/checkRole");
 const { isLoggedIn } = require("../../../ssr/lib/auth");
@@ -44,16 +45,24 @@ router.post(
     };
 
     try {
-      const existDoctor = await controllerDoctor.getDoctorId(newAppointment.idDoctor);
+      const existDoctor = await controllerDoctor.getDoctorId(
+        newAppointment.idDoctor
+      );
+      const existPatient = await controllerPatients.getPatientById(newAppointment.idPatient);
+      console.log(existPatient);
       const exist = await controller.getCitaByDate(newAppointment.date);
-      if (!exist || !existDoctor) {
-        const appointments = await controller.appointmentCreation(
-          newAppointment
-        );
-        if (appointments) {
-          const appointment = appointments.dataValues;
-          console.log(appointment);
-          res.render("appointment/listaddGet", { appointment });
+      if (existDoctor && existPatient) {
+        if (!exist) {
+          const appointments = await controller.appointmentCreation(
+            newAppointment
+          );
+          if (appointments) {
+            const appointment = appointments.dataValues;
+            console.log(appointment);
+            res.render("appointment/listaddGet", { appointment });
+          }
+        } else {
+          res.render("home/errores");
         }
       } else {
         res.render("home/errores");
