@@ -38,8 +38,13 @@ const getDoctorCedula = async (id) => {
   return store.doctorByLicense(id);
 };
 
+const getDoctorId = async (id) => {
+  return store.doctorById(id);
+};
+
 module.exports = {
   doctorCreation,
   doctorUpdate,
-  getDoctorCedula
+  getDoctorCedula,
+  getDoctorId
 };

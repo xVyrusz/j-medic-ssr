@@ -10,6 +10,7 @@ const {
 } = require("../../../utils/validations/schemas/appointment.schema"); // eslint-disable-line
 const validationHandler = require("../../../utils/middlewares/validationHandler");
 const controller = require("./controller");
+const controllerDoctor =require("../doctors/controller");
 const checkJwt = require("../../../utils/middlewares/auth/checkJwt");
 const checkRole = require("../../../utils/middlewares/auth/checkRole");
 const { isLoggedIn } = require("../../../ssr/lib/auth");
@@ -43,8 +44,9 @@ router.post(
     };
 
     try {
+      const existDoctor = await controllerDoctor.getDoctorId(newAppointment.idDoctor);
       const exist = await controller.getCitaByDate(newAppointment.date);
-      if (!exist) {
+      if (!exist || !existDoctor) {
         const appointments = await controller.appointmentCreation(
           newAppointment
         );
