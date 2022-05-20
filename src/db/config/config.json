@@ -1,10 +1,11 @@
 {
   "development": {
-    "username": "7yo49arkhjsp",
-    "password": "pscale_pw_BFtyLKYVT1tWNSOOj5lJjgKd6kqjvQ_MTBHkF3_TGQE",
-    "database": "j_medic",
-    "host": "j3xkv6v3j3ax.us-west-2.psdb.cloud",
-    "dialect": "mysql",
+    "username": "fzpadbgqxmuadv",
+    "password": "9ce794e389f4acc2ea10efa733b0378b9bee96fb7a47818a9a83a4ba72e97ed4",
+    "database": "dbetufpi17isdo",
+    "host": "ec2-52-86-115-245.compute-1.amazonaws.com",
+    "port": 5432,
+    "dialect": "postgres",
     "dialectOptions": {
       "ssl": {
         "rejectUnauthorized": false
@@ -12,11 +13,12 @@
     }
   },
   "test": {
-    "username": "7yo49arkhjsp",
-    "password": "pscale_pw_BFtyLKYVT1tWNSOOj5lJjgKd6kqjvQ_MTBHkF3_TGQE",
-    "database": "j_medic",
-    "host": "j3xkv6v3j3ax.us-west-2.psdb.cloud",
-    "dialect": "mysql",
+    "username": "fzpadbgqxmuadv",
+    "password": "9ce794e389f4acc2ea10efa733b0378b9bee96fb7a47818a9a83a4ba72e97ed4",
+    "database": "dbetufpi17isdo",
+    "host": "ec2-52-86-115-245.compute-1.amazonaws.com",
+    "port": 5432,
+    "dialect": "postgres",
     "dialectOptions": {
       "ssl": {
         "rejectUnauthorized": false
@@ -24,11 +26,12 @@
     }
   },
   "production": {
-    "username": "7yo49arkhjsp",
-    "password": "pscale_pw_BFtyLKYVT1tWNSOOj5lJjgKd6kqjvQ_MTBHkF3_TGQE",
-    "database": "j_medic",
-    "host": "j3xkv6v3j3ax.us-west-2.psdb.cloud",
-    "dialect": "mysql",
+    "username": "fzpadbgqxmuadv",
+    "password": "9ce794e389f4acc2ea10efa733b0378b9bee96fb7a47818a9a83a4ba72e97ed4",
+    "database": "dbetufpi17isdo",
+    "host": "ec2-52-86-115-245.compute-1.amazonaws.com",
+    "port": 5432,
+    "dialect": "postgres",
     "dialectOptions": {
       "ssl": {
         "rejectUnauthorized": false

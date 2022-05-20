@@ -57,11 +57,11 @@ if (config.dev) {
   app.use(morgan("dev"));
 }
 
-var sequelize = new Sequelize("j_medic", "7yo49arkhjsp", "pscale_pw_BFtyLKYVT1tWNSOOj5lJjgKd6kqjvQ_MTBHkF3_TGQE", {
-  host: "j3xkv6v3j3ax.us-west-2.psdb.cloud",
-  port: 3306,
+var sequelize = new Sequelize("dbetufpi17isdo", "fzpadbgqxmuadv", "9ce794e389f4acc2ea10efa733b0378b9bee96fb7a47818a9a83a4ba72e97ed4", {
+  host: "ec2-52-86-115-245.compute-1.amazonaws.com",
+  port: 5432,
   logging: console.log,
-  dialect: "mysql",
+  dialect: "postgres",
   dialectOptions: {
     ssl: {
       rejectUnauthorized: false, // very important
