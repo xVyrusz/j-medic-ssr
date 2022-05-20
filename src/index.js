@@ -57,7 +57,7 @@ if (config.dev) {
   app.use(morgan("dev"));
 }
 
-var sequelize = new Sequelize("j_medic", "4juikaa2v0d6", "pscale_pw_Ajg9MV98xPD4q11agLAfN8uNKRdViIaKg9UIHGsVLyY", {
+var sequelize = new Sequelize("j_medic", "7yo49arkhjsp", "pscale_pw_BFtyLKYVT1tWNSOOj5lJjgKd6kqjvQ_MTBHkF3_TGQE", {
   host: "j3xkv6v3j3ax.us-west-2.psdb.cloud",
   port: 3306,
   logging: console.log,
