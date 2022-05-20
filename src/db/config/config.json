@@ -1,7 +1,7 @@
 {
   "development": {
-    "username": "q95boyuaxzhz",
-    "password": "pscale_pw_ecBR-cB1-oFKcnWwJa_J0TpvsTmyO3AXy8T1XuMCH6s",
+    "username": "4juikaa2v0d6",
+    "password": "pscale_pw_Ajg9MV98xPD4q11agLAfN8uNKRdViIaKg9UIHGsVLyY",
     "database": "j_medic",
     "host": "j3xkv6v3j3ax.us-west-2.psdb.cloud",
     "dialect": "mysql",
@@ -12,8 +12,8 @@
     }
   },
   "test": {
-    "username": "q95boyuaxzhz",
-    "password": "pscale_pw_ecBR-cB1-oFKcnWwJa_J0TpvsTmyO3AXy8T1XuMCH6s",
+    "username": "4juikaa2v0d6",
+    "password": "pscale_pw_Ajg9MV98xPD4q11agLAfN8uNKRdViIaKg9UIHGsVLyY",
     "database": "j_medic",
     "host": "j3xkv6v3j3ax.us-west-2.psdb.cloud",
     "dialect": "mysql",
@@ -24,8 +24,8 @@
     }
   },
   "production": {
-    "username": "q95boyuaxzhz",
-    "password": "pscale_pw_ecBR-cB1-oFKcnWwJa_J0TpvsTmyO3AXy8T1XuMCH6s",
+    "username": "4juikaa2v0d6",
+    "password": "pscale_pw_Ajg9MV98xPD4q11agLAfN8uNKRdViIaKg9UIHGsVLyY",
     "database": "j_medic",
     "host": "j3xkv6v3j3ax.us-west-2.psdb.cloud",
     "dialect": "mysql",
