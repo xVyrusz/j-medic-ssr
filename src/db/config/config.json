@@ -3,7 +3,7 @@
     "username": "admin123",
     "password": "Qawsed123",
     "database": "j_medic",
-    "host": "ec2-52-86-115-245.compute-1.amazonaws.com",
+    "host": "cesarseguros.cy2e4daliexz.us-east-2.rds.amazonaws.com",
     "port": 5432,
     "dialect": "postgres",
     "dialectOptions": {
@@ -16,7 +16,7 @@
     "username": "admin123",
     "password": "Qawsed123",
     "database": "j_medic",
-    "host": "ec2-52-86-115-245.compute-1.amazonaws.com",
+    "host": "cesarseguros.cy2e4daliexz.us-east-2.rds.amazonaws.com",
     "port": 5432,
     "dialect": "postgres",
     "dialectOptions": {
@@ -29,7 +29,7 @@
     "username": "admin123",
     "password": "Qawsed123",
     "database": "j_medic",
-    "host": "ec2-52-86-115-245.compute-1.amazonaws.com",
+    "host": "cesarseguros.cy2e4daliexz.us-east-2.rds.amazonaws.com",
     "port": 5432,
     "dialect": "postgres",
     "dialectOptions": {

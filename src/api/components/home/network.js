@@ -45,7 +45,7 @@ router.post(
         password,
       };
       passport.authenticate("local.login", {
-        successRedirect: "/api/doctor",
+        successRedirect: "/api/seguro",
         failureRedirect: "/login",
         failureFlash: true,
       })(req, res, next);

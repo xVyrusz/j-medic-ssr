@@ -5,7 +5,7 @@ const consultRoutes = require('../components/consults/network');
 const appointmentRoutes = require('../components/appointment/network');
 
 const routes = (app) => {
-  app.use('/api/doctor', doctorRoutes);
+  app.use('/api/seguro', doctorRoutes);
   app.use('/', homeRoutes);
   app.use('/api/patients', patientRoutes);
   app.use('/api/consults', consultRoutes);
